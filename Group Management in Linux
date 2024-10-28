@@ -1,0 +1,23 @@
+#Create a New Group
+sudo addgroup group_name
+# List all groups on the system
+cat /etc/group
+#Add a User to a Group
+sudo adduser username group_name
+#Change the name of a group
+sudo groupmod -n new_group_name old_group_name
+#Remove a User from a Group
+sudo deluser username group_name
+# Remove a user from a group
+sudo gpasswd -d username group_name
+#Display Group Members
+getent group group_name
+#Remove a Group
+sudo delgroup group_name
+#Changing a user's supplementary groups allows you to manage the additional groups
+sudo usermod -aG group1 username
+sudo usermod -aG group1,group2 username
+# Assign a specific GID when creating a new group
+sudo addgroup --gid 1001 new_group_name
+# Change the GID of an existing group
+sudo groupmod --gid new_gid group_name
